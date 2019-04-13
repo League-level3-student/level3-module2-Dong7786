@@ -113,4 +113,9 @@ System.out.println(results.get(i) + ", " +results.get(current));
 
 	}
 
+	public static Object sortDNA(List<String> unsortedSequences) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
