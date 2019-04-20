@@ -55,7 +55,7 @@ static boolean charArraySorted(char[] c) {
 			return false;
 		}
 	}
-	return false;
+	return true;
 }
 
 	
@@ -66,21 +66,13 @@ static boolean charArraySorted(char[] c) {
 	//   array is in alphabetical order and false otherwise
 	//   (Use the compareTo(String) method)
 static boolean stringArraySorted(String[] s) {
-	int small;
-	String num = s[0];
+	int current = 0;
 	for(int i = 0; i < s.length; i ++) {
-		if(num.length() < s[i].length()) {
-			small = num.length();
-		}else {
-			small = s[i].length();
+		if(s[i].compareTo(s[current]) < 0) {
+			return false;
 		}
-			for(int n = 0; n < small; n ++) {
-				if(num.charAt(n) > s[i].charAt(n)){
-					return false;
-				}
-			}
-			num = s[i];
-		}
+		current = i;
+	}
 	
 	return true;
 }

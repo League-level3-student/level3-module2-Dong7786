@@ -115,7 +115,49 @@ System.out.println(results.get(i) + ", " +results.get(current));
 
 	public static Object sortDNA(List<String> unsortedSequences) {
 		// TODO Auto-generated method stub
-		return null;
+		boolean run = true;
+		int current = 0;
+		
+		while(run) {
+			run = false;
+			current = 0;
+			for(int i = 0; i < unsortedSequences.size(); i ++) {
+				if(unsortedSequences.get(current).length() > unsortedSequences.get(i).length() ) {
+					String swap = unsortedSequences.get(i); 
+					unsortedSequences.set(i, unsortedSequences.get(current));
+					unsortedSequences.set(current, swap);
+					
+					run = true;
+				}
+					current = i;
+				
+			}
+			
+		}
+		return unsortedSequences;
 	}
+
+	public static List<String> sortWords(List<String> words) {
+		// TODO Auto-generated method stub
+		boolean run = true;
+		int current = 0;
+		
+		while(run) {
+			run = false;
+			current = 0;
+			for(int i = 0; i < words.size(); i ++) {
+				if(words.get(i).compareToIgnoreCase(words.get(current)) < 0) {
+					String swap = words.get(i);
+					words.set(i, words.get(current));
+					words.set(current, swap);
+					
+					run = true;
+				}
+				current = i;
+			}
+		}
+		return words;
+	}
+	
 
 }
